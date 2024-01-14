@@ -48,7 +48,7 @@ printCar({
   make: 'Tesla',
   model: 'Model 3',
   year: 2020,
-  color: 'RED', //? EXTRA PROPERTY
+  // color: 'RED', //? EXTRA PROPERTY
 })
 
 //* Index signatures
@@ -110,8 +110,8 @@ myCar2 = ['Honda', 2017, 'Accord', 'Sedan'] //! Wrong convention
 
 let myCar3: [number, string, string] = [2002, 'Toyota', 'Corolla']
 
-myCar3 = ['Honda', 2017, 'Accord'] //! Wrong convention
-myCar3 = [2017, 'Honda', 'Accord', 'Sedan'] //! Too many elements
+// myCar3 = ['Honda', 2017, 'Accord'] //! Wrong convention
+// myCar3 = [2017, 'Honda', 'Accord', 'Sedan'] //! Too many elements
 
 //*  `readonly` tuples
 
@@ -130,7 +130,7 @@ numPair.length //! ❌ DANGER ❌
 
 const roNumPair: readonly [number, number] = [4, 5]
 roNumPair.length
-roNumPair.push(6) // [4, 5, 6] //! Not allowed
-roNumPair.pop() // [4, 5] //! Not allowed
+// roNumPair.push(6) // [4, 5, 6] //! Not allowed
+// roNumPair.pop() // [4, 5] //! Not allowed
 
 export default {}
