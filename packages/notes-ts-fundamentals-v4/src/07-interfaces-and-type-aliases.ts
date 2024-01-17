@@ -174,8 +174,7 @@ class Dog3 implements CanJump {
 //* Open interfaces
 
 function feed(animal: AnimalLike) {
-  animal.eat
-  animal.isAlive
+  if (animal.isAlive()) animal.eat('food')
 }
 
 interface AnimalLike {
@@ -185,30 +184,28 @@ interface AnimalLike {
 
 //* Use case: augmenting existing types
 
-/*
-// window.document // an existing property
-// //      ^? (property) document: Document
-// window.exampleProperty = 42
-// //      ^? (property) exampleProperty: number
+window.document // an existing property
+//      ^? (property) document: Document
+window.exampleProperty = 42
+//      ^? (property) exampleProperty: number
 
-/*
-//// tells TS that `exampleProperty` exists
-// declare global {
-//     interface Window {
-//     exampleProperty: number
-//     }
-// }
+// tells TS that `exampleProperty` exists
+declare global {
+  interface Window {
+    exampleProperty: number
+  }
+}
 
 //* Recursive types
-/*
-// type NestedNumbers = number | NestedNumbers[]
- 
-// const val: NestedNumbers = [3, 4, [5, 6, [7], 59], 221]
-/*
-// if (typeof val !== "number") {
-//   val.push(41)
-//   val.push("this will not work") //! No strings allowed
-// }
+
+type NestedNumbers = number | NestedNumbers[]
+
+const val: NestedNumbers = [3, 4, [5, 6, [7], 59], 221]
+
+if (typeof val !== 'number') {
+  val.push(41)
+  val.push('this will not work') //! No strings allowed
+}
 
 /**/
 export default {}
