@@ -38,12 +38,12 @@ const banana: Fruit = {
 // }
 
 //* How to tell what's on an indentifier
-/*
-// const is_a_value = 4
-// type is_a_type = {}
-// namespace is_a_namespace {
-//   const foo = 17
-// }
+
+const is_a_value = 4
+type is_a_type = {}
+namespace is_a_namespace {
+  const foo = 17
+}
 
 // // how to test for a (value | namespace)
 // const x = is_a_value // the value position (RHS of =).
